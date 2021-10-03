@@ -1,0 +1,1 @@
+export const displayTheme = (theme: string) => theme === "dark" ? "light" : "dark";
