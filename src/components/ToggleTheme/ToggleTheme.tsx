@@ -3,7 +3,7 @@ import { IStore } from "../../interfaces";
 import { StoreContext } from "../Store/StoreContext";
 import { Types } from '../../store/types';
 import StyledToggle from "./ToggleTheme.styles";
-import { Icon } from "../Icon/Icon";
+import { ThemeIcon } from "../ThemeIcon/ThemeIcon";
 import { displayTheme } from "./helpers";
 
 
@@ -19,7 +19,7 @@ export const ToggleTheme = () => {
   return (
     <StyledToggle onClick={toggleHandler}>
       {displayTheme(theme)}
-      <Icon theme={theme} />
+      <ThemeIcon theme={theme} />
     </StyledToggle>
   )
 }

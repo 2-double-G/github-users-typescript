@@ -25,6 +25,9 @@ export const mode: IMode = {
     themeButton: {
       bgHover: "rgba(255, 255, 255, 0.2)"
     },
+    repo: {
+      bg: "rgb(20, 28, 47)"
+    }
   },
   light: {
     card: {
@@ -42,6 +45,9 @@ export const mode: IMode = {
     },
     themeButton: {
       colorHover: "rgb(20, 28, 47)"
+    },
+    repo: {
+      bg: "#f5f8ff",
     },
   },
 };

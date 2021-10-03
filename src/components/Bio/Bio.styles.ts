@@ -1,5 +1,5 @@
 import styled from "styled-components";
 
-export default styled.img`
+export default styled.div`
   
 `;
