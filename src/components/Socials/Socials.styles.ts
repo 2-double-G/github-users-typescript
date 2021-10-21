@@ -7,12 +7,13 @@ export default styled.div`
   ul {
     box-sizing: border-box;
     flex-basis: 66.66%;
-    columns: 150px;
-    column-gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
 
     & * {
       flex-basis: 100%;
       flex: 1;
+      padding: 0 0.5rem;
     }
   }
 
@@ -26,7 +27,7 @@ export default styled.div`
 
     & * {
       text-overflow: ellipsis;
-      max-width: 165px;
+      max-width: 170px;
       min-height: 15px;
       white-space: nowrap;
       overflow: hidden;
@@ -38,6 +39,7 @@ export default styled.div`
   }
 
   a {
+    box-sizing: border-box;
     text-decoration: none;
     display: inline-block;
     color: ${({ theme }) => theme.userSearch.color};
@@ -51,5 +53,15 @@ export default styled.div`
     margin-right: 1rem;
     position: absolute;
     left: -0.1rem;
+  }
+
+  @media(max-width: 768px) {
+    ul {
+      flex-basis: 100%;
+    }
+
+    li * {
+      max-width: 250px;
+    }
   }
 `;

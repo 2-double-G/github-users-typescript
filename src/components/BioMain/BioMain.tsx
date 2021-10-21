@@ -1,20 +1,34 @@
 import StyledBioMain from "./BioMain.styles";
-import { Avatar } from '../Image/Avatar';
+import { Avatar } from '../Avatar/Avatar';
 import Octocat from "../../assets/images/Octocat.png"
+import { useContext } from "react";
+import { IStore } from "../../interfaces";
+import { StoreContext } from "../Store/StoreContext";
+import { parseDate } from "./helpers/parseDate";
 
-export const BioMain: React.FC = () => (
-  <StyledBioMain>
-    <div>
-      <Avatar src={Octocat} alt="user-avatar" size="80" />
-    </div>
-    <div>
+export const BioMain: React.FC = () => {
+  const { state: { user } } = useContext<IStore>(StoreContext);
+
+  return (
+    <StyledBioMain>
       <div>
-        <h2>The Octocat</h2>
-        <a href="/">@octocat</a>
+        <Avatar src={user?.avatar_url || Octocat} alt="user-avatar" />
       </div>
       <div>
-        <time>Joined 25 Jan 2011</time>
+        <div>
+          <h2>{user!.name}</h2>
+          <a
+            href={user!.html_url}
+            target='_blank'
+            rel='noreferrer noopener'
+          >
+            {user!.login}
+          </a>
+        </div>
+        <div>
+          <time>Joined { parseDate(user?.created_at)}</time>
+        </div>
       </div>
-    </div>
-  </StyledBioMain>
-)
+    </StyledBioMain>
+  )
+};

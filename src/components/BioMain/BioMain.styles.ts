@@ -2,6 +2,11 @@ import styled from "styled-components";
 
 export default styled.div`
   display: flex;
+  margin-bottom: 0.5rem;
+
+  div {
+    padding: 0 0.5rem;
+  }
 
   div:first-of-type{
     flex-basis: 33.33%;
@@ -46,5 +51,17 @@ export default styled.div`
   time {
     text-align: end;
     font-size: 14px;
+  }
+
+  @media(max-width: 768px) {
+    margin-bottom: 1rem;
+
+    div:last-of-type {
+      flex-direction: column;
+    }
+
+    time {
+      text-align: start;
+    }
   }
 `;

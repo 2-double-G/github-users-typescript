@@ -10,4 +10,10 @@ export default styled.div`
     flex-basis: 66.66%;
     line-height: 1.5;
   }
+
+  @media(max-width: 768px) {
+    p {
+    flex-basis: 100%;
+    }
+  }
 `;

@@ -5,11 +5,10 @@ import StyledAvatar from "./Avatar.styles";
 export interface AvatarProps {
   alt?:string
   src: string
-  size: number | string
 }
 
-export const Avatar: React.FC<AvatarProps> = ({ size, ...props }) => (
-  <StyledAvatar size={size}>
+export const Avatar: React.FC<AvatarProps> = ({ ...props }) => (
+  <StyledAvatar >
     <img {...props} />
   </StyledAvatar>
 );

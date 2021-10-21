@@ -1,3 +1,7 @@
 export const initialState = {
-  theme: "light"
-};
+  theme: "light",
+  input: "",
+  error: "",
+  user: null
+}
+
