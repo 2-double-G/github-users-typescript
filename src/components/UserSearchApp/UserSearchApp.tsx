@@ -8,7 +8,7 @@ import StyledUserSearchApp from "./UserSearchApp.styles";
 
 export const UserSearchApp = () => {
   const { state: { user, error } } = useContext<IStore>(StoreContext);
-  console.log(user)
+  
   return (
     <StyledUserSearchApp>
       <Header />

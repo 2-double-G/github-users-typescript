@@ -3,6 +3,7 @@ import { IoLocationSharp, IoLink, IoLogoTwitter, IoBusiness } from "react-icons/
 import { IStore } from "../../interfaces";
 import { StoreContext } from "../Store/StoreContext";
 import StyledSocials from "./Socials.styles";
+import { isValidURL } from './helpers/isValidURL';
 
 export const Socials: React.FC = () => {
   const { state: { user } } = useContext<IStore>(StoreContext);
@@ -19,7 +20,7 @@ export const Socials: React.FC = () => {
             <IoLink />
             {user!.blog ? <a
               target="_blank"
-              href={user!.blog}
+              href={isValidURL(user!.blog)}
               rel="noopener noreferrer"
             >
               {user!.blog}
